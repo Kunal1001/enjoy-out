@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>🌞EnjoyOut</title>
+</head>
+<body>
+    <% if(locals.imgSrc) {%>
+        <section  class="result">
+                <% if(uvIndex<5) {%>
+                    <h1>
+                       <%= uvIndex  %>! UV Index is Normal, You can 🌞EnjoyOut
+                    </h1>
+                <% } else if(uvIndex<10) {%>
+                    <h1>
+                        <%= uvIndex  %>! UV Index is Slighty High, Please apply skin protection before Going OUT!
+                    </h1>
+                <% } else { %>
+                    <h1>
+                        <%= uvIndex  %>! UV Index is Very High, Avoid Going OUT!
+                    </h1>
+                <% } %>
+                <img
+                    class="skeleton"
+                    width="600" 
+                    height="400" 
+                    src= <%= imgSrc  %> 
+                    alt="Your Locality"
+                >
+                <form action="/" method="post">
+                    <input type="submit" name="back" id="button" value="Back" formaction="/">
+                </form>
+        </section>
+    <% } else {%>
+    <form action="/submit" method="post">
+        <div class="container">
+        <h1>Enter Your Location Details Below!</h1>
+        <input type="text" name="name" id="q1" class="q" placeholder="Locality Name" required>
+        <input type="text" name="city" id="q2" class="q" placeholder="City" required>
+        <input type="text" name="state" id="q3" class="q" placeholder="State" required>
+        <input type="text" name="country" id="q4" class="q" placeholder="Country" required>
+        <input type="submit" name="submit" id="button" value="Submit">
+        </div>
+    </form>
+    <% } %>
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>
