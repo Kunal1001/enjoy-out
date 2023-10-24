@@ -7,3 +7,8 @@ EnjoyOut is a web app that takes your minimal address as input, use it to get th
 - Geocoding API by [geoapify.com](https://geoapify.com/)
 - UV Index API by [OpenUV.io](https://www.openuv.io/)
 - Static Map Tile API by [geoapify.com](https://geoapify.com/)
+
+## Dependencies
+- Express
+- Axios
+- ejs
